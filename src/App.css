@@ -1,3 +1,7 @@
+.is-active {
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }

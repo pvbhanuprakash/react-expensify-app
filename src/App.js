@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './App.css';
+import DashboardComponent from "./Components/ExpenseDashboard";
+import AddExpenseComponent from "./Components/AddExpense";
+import EditComponent from "./Components/EditExpense";
+import HelpComponent from "./Components/HelpPage";
+import HeaderComponent from "./Components/Header";
+import NotFoundComponent from "./Components/NotFoundPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const routes = () => (
+  <BrowserRouter>
+    <div>
+      <HeaderComponent />
+      <Switch>
+        <Route path="/" component={DashboardComponent} exact={true} />
+        <Route path="/create" component={AddExpenseComponent} />
+        <Route path="/edit/:id" component={EditComponent} />
+        <Route path="/help" component={HelpComponent} />
+        <Route component={NotFoundComponent} />
+      </Switch>
     </div>
-  );
-}
+  </BrowserRouter>
+);
 
-export default App;
+export default routes;
