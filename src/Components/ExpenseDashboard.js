@@ -1,5 +1,12 @@
-import React from 'react';
+import React from "react";
+import ExpenseList from "./ExpenseList";
+import ExpenseListFilters from "./ExpenseListFilters";
 
-const DashboardComponent = () => <p>DashboardComponent</p>;
+const DashboardComponent = () => (
+  <div>
+    <ExpenseListFilters />
+    <ExpenseList />
+  </div>
+);
 
 export default DashboardComponent;
