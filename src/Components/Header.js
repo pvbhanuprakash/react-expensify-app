@@ -32,7 +32,6 @@ const HeaderComponent = () => {
 	const navLinks = [
 		{ title: `Dashboard`, path: `/` },
 		{ title: `Create Expense`, path: `/create` },
-		{ title: `Edit Expense`, path: `/edit` },
 		{ title: `Help`, path: `/help` },
 	];
 	return (

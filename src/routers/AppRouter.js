@@ -8,7 +8,7 @@ import NotFoundComponent from "../Components/NotFoundPage";
 
 const AppRouter = () => (
   <BrowserRouter>
-    <>
+    <div>
       <HeaderComponent />
       <Switch>
         <Route path="/" component={DashboardComponent} exact={true} />
@@ -17,7 +17,7 @@ const AppRouter = () => (
         <Route path="/help" component={HelpComponent} />
         <Route component={NotFoundComponent} />
       </Switch>
-    < />
+    </div>
   </BrowserRouter>
 );
 
