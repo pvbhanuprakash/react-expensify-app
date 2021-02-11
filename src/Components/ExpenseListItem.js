@@ -8,7 +8,7 @@ const ExpenseListItem = ({ dispatch, id, description, amount, createdAt }) => (
       <h3>{description}</h3>
     </Link>
     <p>
-      {amount} - {moment(createdAt).format('DD MMM, YYYY')}
+      &#8377; {amount} - {moment(createdAt).format("DD MMM, YYYY")}
     </p>
   </div>
 );
