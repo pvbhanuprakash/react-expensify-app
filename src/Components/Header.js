@@ -33,8 +33,7 @@ const HeaderComponent = ({ signOut }) => {
   const classes = useStyles();
   const navLinks = [
     { title: `Dashboard`, path: `/dashboard` },
-    { title: `Create Expense`, path: `/create` },
-    { title: `Help`, path: `/help` }
+    { title: `Create Expense`, path: `/create` }
   ];
   return (
     <div>
