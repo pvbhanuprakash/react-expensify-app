@@ -68,7 +68,7 @@ export const setExpenses = expenses => ({
 
 export const startSetExpenses = (expenseData = {}) => {
   return dispatch => {
-    database
+    return database
       .ref("expenses")
       .once("value")
       .then(snapshot => {
