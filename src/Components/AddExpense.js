@@ -5,7 +5,9 @@ import { startAddExpense } from "../actions/expenses.actions";
 
 const AddExpenseComponent = props => (
   <div>
-    <p>AddExpense</p>
+    <div style={{ background: "beige", padding: "20px", height: "80px" }}>
+      <h1 style={{ "font-weight": "300" }}>Add Expense</h1>
+    </div>
     <ExpenseForm
       onSubmit={expense => {
         props.dispatch(startAddExpense(expense));

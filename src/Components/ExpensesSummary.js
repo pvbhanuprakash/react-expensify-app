@@ -5,10 +5,15 @@ import visibleExpensesTotal from "../selectors/expenses-total.selector";
 
 const ExpensesSummary = ({ expensesCount, expensesTotal }) => {
   return (
-    <h2>
-      Viewing {expensesCount} {expensesCount === 1 ? "expense" : "expenses"}{" "}
-      totalling &#8377; {expensesTotal}
-    </h2>
+    <div
+      style={{ background: "beige", "padding": "20px", 'height': "80px" }}
+    >
+      <h1 style={{ "font-weight": "300" }}>
+        Viewing <span style={{ "font-weight": "700" }}>{expensesCount}</span>{" "}
+        {expensesCount === 1 ? "expense" : "expenses"} totalling &#8377;{" "}
+        <span style={{ "font-weight": "700" }}>{expensesTotal}</span>
+      </h1>
+    </div>
   );
 };
 

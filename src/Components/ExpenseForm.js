@@ -2,6 +2,7 @@ import "react-dates/initialize";
 import React from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
+import { TextField, Button } from "@material-ui/core";
 
 export default class ExpenseForm extends React.Component {
   constructor(props) {
@@ -63,36 +64,61 @@ export default class ExpenseForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ display: "flex", "justify-content": "center" }}>
         {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            value={this.state.description}
-            onChange={this.onDescriptionChange}
-            placeholder="Description"
-            autoFocus
-          />
-          <input
-            type="text"
-            value={this.state.amount}
-            onChange={this.onAmountChange}
-            placeholder="Amount"
-          />
-          <SingleDatePicker
-            date={this.state.createdAt}
-            onDateChange={this.onDateChange}
-            focused={this.state.calendarFocused}
-            onFocusChange={this.onFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
-          <textarea
-            value={this.state.note}
-            onChange={this.onNoteChange}
-            placeholder="Add a note for your expense (optional)"
-          ></textarea>
-          <button>Add Expense</button>
+        <form
+          onSubmit={this.onSubmit}
+          style={{
+            display: "flex",
+            "flex-direction": "column",
+            width: "500px"
+          }}
+        >
+          <div style={{ margin: "10px" }}>
+            <TextField
+              id="outlined-basic"
+              label="Description"
+              variant="outlined"
+              value={this.state.description}
+              onChange={this.onDescriptionChange}
+              fullWidth
+            />
+          </div>
+          <div style={{ margin: "10px" }}>
+            <TextField
+              id="outlined-basic"
+              label="Amount"
+              variant="outlined"
+              value={this.state.amount}
+              onChange={this.onAmountChange}
+              fullWidth
+            />
+          </div>
+          <div style={{ display: 'flex', margin: "10px", "justify-content": "center", border: '1px' }}>
+            <SingleDatePicker
+              date={this.state.createdAt}
+              onDateChange={this.onDateChange}
+              focused={this.state.calendarFocused}
+              onFocusChange={this.onFocusChange}
+              numberOfMonths={1}
+              isOutsideRange={() => false}
+            />
+          </div>
+          <div style={{ margin: "10px" }}>
+            <TextField
+              id="outlined-multiline-static"
+              label="Add a note for your expense (optional)"
+              multiline
+              rows={4}
+              variant="outlined"
+              value={this.state.note}
+              onChange={this.onNoteChange}
+              fullWidth
+            />
+          </div>
+          <Button type="submit" variant="contained" color="primary">
+            Add Expense
+          </Button>
         </form>
       </div>
     );

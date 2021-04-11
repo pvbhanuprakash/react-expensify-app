@@ -5,10 +5,21 @@ import expensesSelector from "../selectors/expenses.selector";
 
 const ExpenseList = props => (
   <div>
-    <h1>Expense List</h1>
-    {props.expenses.map(expense => (
-      <ExpenseListItem key={expense.id} {...expense} />
-    ))}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        gridGap: "30px"
+      }}
+    >
+      {props.expenses.length > 0 ? (
+        props.expenses.map(expense => (
+          <ExpenseListItem key={expense.id} {...expense} />
+        ))
+      ) : (
+        <h4>Expenses list empty</h4>
+      )}
+    </div>
   </div>
 );
 
